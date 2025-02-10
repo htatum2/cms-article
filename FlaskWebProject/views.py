@@ -114,13 +114,15 @@ def _load_cache():
     # Load the cache from `msal`, if it exists
     cache = msal.SerializableTokenCache()
     if os.path.exists('token_cache.bin'):
-        cache.deserialize(open('token_cache.bin', 'r').read())
+        with open('token_cache.bin', 'r') as f:
+            cache.deserialize(f.read())
     return cache
 
 def _save_cache(cache):
-    # # Save the cache, if it has changed
+    # Save the cache, if it has changed
     if cache.has_state_changed:
-        open('token_cache.bin', 'w').write(cache.serialize())
+        with open('token_cache.bin', 'w') as f:
+            f.write(cache.serialize())
 
 def _build_msal_app(cache=None, authority=None):
     # Return a ConfidentialClientApplication
@@ -132,7 +134,7 @@ def _build_auth_url(authority=None, scopes=None, state=None):
     # Return the full Auth Request URL with appropriate Redirect URI
     app = _build_msal_app(authority=authority)
     return app.get_authorization_request_url(
-        scopes or [],
-        state=state or str(uuid.uuid4()),
+        scopes or [], 
+        state=state or str(uuid.uuid4()), 
         redirect_uri=url_for('authorized', _external=True)
     )
