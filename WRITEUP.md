@@ -1,12 +1,7 @@
-# Write-up Template
+Costs: I chose Azure App Service because it is generally more cost-effective for simple applications. With its pay-as-you-go pricing model, I only pay for the resources I use, unlike VMs which often have higher costs due to the need for managing and maintaining the underlying infrastructure.
 
-### Analyze, choose, and justify the appropriate resource option for deploying the app.
+Scalability: I prefer App Service because it provides automatic scaling options, allowing my application to handle varying loads without manual intervention. This is particularly useful for my CMS app, as it can easily scale out to accommodate more users or traffic spikes. In contrast, scaling a VM requires manual configuration and management, which can be more complex and time-consuming.
 
-*For **both** a VM or App Service solution for the CMS app:*
-- *Analyze costs, scalability, availability, and workflow*
-- *Choose the appropriate solution (VM or App Service) for deploying the app*
-- *Justify your choice*
+Availability: I chose App Service because it includes built-in high availability and disaster recovery features, ensuring that my application remains accessible even during failures. This is crucial for my CMS app where uptime is important. VMs, on the other hand, require additional setup and configuration to achieve similar levels of availability.
 
-### Assess app changes that would change your decision.
-
-*Detail how the app and any other needs would have to change for you to change your decision in the last section.*  
+Workflow: I find App Service simplifies the deployment process with integrated CI/CD pipelines, making it easier to deploy updates and manage the application lifecycle. This streamlined workflow is beneficial for my CMS app, as it allows for quick and efficient updates. Managing deployments on a VM can be more cumbersome and requires more manual effort.
