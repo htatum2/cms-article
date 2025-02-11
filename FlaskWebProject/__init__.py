@@ -23,6 +23,7 @@ Session(app)
 db = SQLAlchemy(app)
 login = LoginManager(app)
 login.login_view = 'login'
+app.logger.info('Admin successfully logged in')
 
 import FlaskWebProject.views
 
