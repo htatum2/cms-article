@@ -27,17 +27,7 @@ login.login_view = 'login'
 import FlaskWebProject.views
 
 
-# Example log messages for each log level
-log = 'info'
-if log:
-    if log == 'info':
-        app.logger.info('No issue.')
-    elif log == 'warning':
-        app.logger.warning('Warning occurred.')
-    elif log == 'error':
-        app.logger.error('Error occurred.')
-    elif log == 'critical':
-        app.logger.critical('Critical error occurred.')
+
 
 # Log that the application has started
 app.logger.warning('Flask application has started.')
